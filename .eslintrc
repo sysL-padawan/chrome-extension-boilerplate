@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+    "plugins": ["@typescript-eslint"],
+    "root": true
+}

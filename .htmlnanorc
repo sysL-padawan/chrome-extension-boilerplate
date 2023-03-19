@@ -1,0 +1,7 @@
+{
+  "removeAttributeQuotes": true,
+  "removeComments": true,
+  "removeEmptyAttributes": true,
+  "removeRedundantAttributes": true,
+  "collapseWhitespace": true
+}

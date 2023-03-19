@@ -1,0 +1,29 @@
+{
+  "name": "tab-rotator",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@rbf/parcel-optimizer-javascript-obfuscator": "^0.2.2",
+    "@types/chrome": "^0.0.211",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-config-google": "^0.14.0",
+    "fontmin": "^0.9.9",
+    "parcel": "2.3.2",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "purgecss": "^5.0.0",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build-prod": "tsc && parcel build ./src/html/popup.html --public-url ./ && parcel build ./src/background.js",
+    "build-dev": "tsc && yarn purge-css && parcel build ./src/html/popup.html --public-url ./ --no-optimize && parcel build ./src/background.js --no-optimize",
+    "purge-css": "purgecss --css src/html/bootstrapV5/css/bootstrap.min.css --content src/html/popup.html --output src/html/css/bootstrap.purged.min.css",
+    "minify-fonts": "node ./tools/minify-fonts.js"
+  },
+  "staticFiles": [
+    {
+      "staticPath": "./src/static"
+    }
+  ]
+}
